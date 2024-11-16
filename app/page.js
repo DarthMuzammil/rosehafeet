@@ -1,8 +1,6 @@
-import Image from "next/image";
-import { BlockPage } from "@/components/app-page";
-
+import LandingPage from "@/components/landing-page";
 export default function Home() {
   return (
-    <BlockPage />
+    <LandingPage />
   );
 }
