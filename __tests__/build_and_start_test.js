@@ -1,6 +1,9 @@
-import { exec } from 'child_process';
-import { jest } from '@jest/globals';
+const { exec } = require('child_process');
 
+// Remove the import of jest from @jest/globals
+// jest is globally available in the test environment
+
+// Mock the child_process module
 jest.mock('child_process');
 
 describe('Build and Start Tests', () => {
