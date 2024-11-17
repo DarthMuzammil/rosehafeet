@@ -1,7 +1,6 @@
-import { BlockPage } from "@/components/app-page";
-
+import { HomePage as HomePageScreen } from "@/components/screens/Homepage";
 export default function HomePage() {
   return (
-    <BlockPage />
+    <HomePageScreen />
   );
 }
