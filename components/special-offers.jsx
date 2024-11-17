@@ -1,7 +1,7 @@
-"'use client'";
+"use client";
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { CalendarDays, Droplet, Dumbbell, Mountain, Sparkles, ArrowRight, Phone } from "'lucide-react'"
+import { CalendarDays, Droplet, Dumbbell, Mountain, Sparkles, ArrowRight, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
@@ -26,7 +26,7 @@ export function SpecialOffersComponent() {
         transition={{ duration: 1 }}
         className="relative h-[50vh] overflow-hidden">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image3.jpg-OTuJ6ZTO4yZBqYUQCQ66qIqPT3suBX.jpeg"
+          src="/image.jpg"
           alt="Luxury infinity pool with mountain view"
           fill
           className="object-cover" />
@@ -101,22 +101,22 @@ export function SpecialOffersComponent() {
                 title="Rose Package for Women"
                 description="Sulfur water session package with mud and salt cave"
                 price={250}
-                image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.jpg-6bFS4o6HLbINz8NiSElHS85BBfWXwn.jpeg" />
+                image="/image2.jpg" />
               <PackageCard
                 title="Rose Package for Men"
                 description="Sulfur Water with Moroccan Bath and Salt Cave"
                 price={250}
-                image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image2.jpg-AZDIBPXS41XXlW29gOgfHOw09bCdjf.jpeg" />
+                image="/image3.jpg" />
               <PackageCard
                 title="Daily Rose Bouquet"
                 description="Salt cave, Sulfur Water, Massage, Mini train or jacuzzi"
                 price={175}
-                image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image3.jpg-OTuJ6ZTO4yZBqYUQCQ66qIqPT3suBX.jpeg" />
+                image="/image.jpg" />
               <PackageCard
                 title="Special Package"
                 description="Sulfur water + hair dryer"
                 price={50}
-                image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.jpg-6bFS4o6HLbINz8NiSElHS85BBfWXwn.jpeg" />
+                image="/image2.jpg" />
             </div>
           </TabsContent>
         </Tabs>
