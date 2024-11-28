@@ -1,4 +1,4 @@
-import { ServicesPage } from "../services-page"
+'use client'
 export default function About() {
-    return(<ServicesPage />)
+    return(<div />)
 }
