@@ -1,4 +1,7 @@
 import localFont from "next/font/local";
+import Header from "@/components/custom/Header";
+import Footer from "@/components/custom/Footer";
+import { MenuContextProvider } from "@/contexts/MenuContext";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -23,7 +26,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <MenuContextProvider>
+          <Header />
+          {children}
+          <Footer />
+        </MenuContextProvider>
       </body>
     </html>
   );
