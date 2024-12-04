@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <MenuContextProvider>
           <Header />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </MenuContextProvider>
       </body>
     </html>
