@@ -28,7 +28,7 @@ export function CardStack({ cards, cardShuffled, setShuffleCards }) {
 
           return (
             <Card
-              key={card.id}
+              key={index}
               className={cn(
                 "absolute inset-0 transition-all duration-300 ease-in-out cursor-pointer rounded-[10px]",
                 isHovered && "hover:shadow-xl"
@@ -45,7 +45,7 @@ export function CardStack({ cards, cardShuffled, setShuffleCards }) {
               <CardContent className="flex p-0 h-full">
                 <Image
                   onClick={imageClick}
-                  src={card.image}
+                  src={"/main/about.png"}
                   alt="hello"
                   width={900}
                   height={700}

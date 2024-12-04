@@ -3,17 +3,7 @@ import Header from "@/components/custom/Header";
 import Footer from "@/components/custom/Footer";
 import { MenuContextProvider } from "@/contexts/MenuContext";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { acme } from './fonts'
 
 export const metadata = {
   title: "Rosehafeet",
@@ -24,12 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={acme.className}
       >
         <MenuContextProvider>
           <Header />
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </MenuContextProvider>
       </body>
     </html>

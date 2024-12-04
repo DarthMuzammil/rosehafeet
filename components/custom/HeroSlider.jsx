@@ -2,26 +2,39 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 
-// Sample slides data
 const slides = [
   {
-    image: "/main/SaltCaveItemsLandsacape.jpeg",
-    title: "Experience Unmatched Relaxation and Adventure at Rose Hafeet",
-    description: "Discover wellness, thrills, and unforgettable memories with our unique attractions healing experiences in Al Mubazzarah Park."
+    image: "/homepage/hero/1.jpeg",
+    title: "Salt Cave Serenity",
+    description: "Experience ultimate relaxation in our serene salt cave."
   },
   {
-    image: "/main/StaffSaltCave.jpeg",
-    title: "Immerse Yourself in Luxury and Tranquility",
-    description: "Indulge in our world-class spa facilities and experience the perfect blend of modern comfort natural serenity."
+    image: "/homepage/hero/2.jpeg",
+    title: "Healing Atmosphere",
+    description: "Breathe in the therapeutic air of our salt cave."
   },
   {
-    image: "/main/StaffSaltCave.jpeg",
-    title: "Adventure Awaits at Every Corner",
-    description: "From thrilling activities to peaceful retreats, create lasting memories in our carefully crafted environments."
-  }
-]
-
-export default function HeroSlider() {
+    image: "/homepage/hero/3.jpeg",
+    title: "Natural Detox",
+    description: "Enjoy a natural detox in the calming environment of salt crystals."
+  },
+  {
+    image: "/homepage/hero/4.jpeg",
+    title: "Rejuvenating Escape",
+    description: "Refresh your mind and body with a visit to our salt cave."
+  },
+  {
+    image: "/homepage/hero/5.jpeg",
+    title: "Game Area: Zipline",
+    description: "Adreline rush with zipline."
+  },
+  {
+    image: "/homepage/hero/6.jpeg",
+    title: "Tranquil Retreat",
+    description: "Unwind in the tranquil ambiance of the salt cave."
+  },
+];
+export default function HeroSlider({}) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [fadeIn, setFadeIn] = useState(true)
 
@@ -50,9 +63,6 @@ export default function HeroSlider() {
           fill
           className="object-cover"
           priority />
-        {/* Overlay */}
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-900/40" />
       </div>
       {/* Content */}
       <div className="relative h-full w-full">
@@ -63,10 +73,10 @@ export default function HeroSlider() {
                 fadeIn ? "opacity-100" : "opacity-0"
               }`}>
               <h1
-                className="mb-6 text-4xl font-bold leading-tight tracking-tighter text-white sm:text-5xl md:text-6xl">
+                className="mb-6 text-4xl font-bold leading-tight tracking-tighter text-black sm:text-5xl md:text-6xl">
                 {slides[currentSlide].title}
               </h1>
-              <p className="text-lg text-gray-200 md:text-xl">
+              <p className="text-lg text-black md:text-xl">
                 {slides[currentSlide].description}
               </p>
             </div>

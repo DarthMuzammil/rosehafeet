@@ -7,8 +7,9 @@ import OurProjects from "./custom/landing/OurProjects";
 import AboutSection from "./custom/landing/AboutSection";
 import HeroSection from "./custom/landing/HeroSection";
 import NewsSection from "./custom/landing/NewsSection";
+import SpaFacilities from "./spa-facilities";
 
-export function Landing() {
+export function SaltCave() {
   const {isMenuOpen, setMenu} = useMenuContext();
 
   return (
@@ -56,10 +57,8 @@ export function Landing() {
         )}
       </AnimatePresence>
       <main>
-        <HeroSection />
-        <AboutSection />
-        <OurProjects />
-        <NewsSection />
+    
+<SpaFacilities />
       </main>
     </div>
   );
