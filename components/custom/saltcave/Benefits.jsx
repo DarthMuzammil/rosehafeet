@@ -1,38 +1,11 @@
 "use client";
 import Image from "next/image";
 import SectionHeading from "../SectionHeading";
-
-const benefits = [
-  {
-    title: "Respiratory Relief",
-    description:
-      "Alleviates symptoms of asthma, allergies, sinusitis, and other respiratory conditions",
-  },
-  {
-    title: "Stress Reduction",
-    description:
-      "Promotes relaxation, reduces anxiety, and improves sleep quality.",
-  },
-  {
-    title: "Skin Rejuvenation",
-    description:
-      "Helps with skin conditions like eczema, psoriasis, and acne by detoxifying and cleansing.",
-  },
-  {
-    title: "Immune Boost",
-    description:
-      "Strengthens the body’s defense mechanism through ion-rich air.",
-  },
-  {
-    title: "Energy Enhancement",
-    description:
-      "Recharges your mind and body, promoting a sense of balance and vitality.",
-  },
-];
+import { benefits } from "@/lib/saltcave";
 
 function Benefit({ benefit }) {
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid h-1/2 w-1/2 grid-cols-4 place-items-center">
       {benefit.map((item, index) => (
         <div
           key={index}
@@ -51,17 +24,16 @@ function Benefit({ benefit }) {
 }
 export default function Benefits() {
   return (
-    <div>
-      <h1>Benefits of Salt Cave Therapy</h1>
-      <div
-        style={{
-          backgroundImage: "url('/saltcave/background.png')",
-          backgroundRepeat: "repeat",
-          height: "100vh",
-          width: "100%",
-        }}
-      >
-        <div className="flex justify-center items-center pt-[80px] flex-row w-full">
+    <div
+      style={{
+        backgroundImage: "url('/saltcave/background.png')",
+        backgroundRepeat: "repeat",
+        height: "100vh",
+        width: "100%",
+      }}
+    >
+      <div className="flex flex-col h-full justify-start items-center gap-10">
+        <div className="flex justify-center  items-center pt-[80px] flex-row w-full">
           <SectionHeading>Benefits of Salt Cave</SectionHeading>
         </div>
         <Benefit benefit={benefits} />

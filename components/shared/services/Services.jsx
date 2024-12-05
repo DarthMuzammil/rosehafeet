@@ -17,16 +17,19 @@ function FacilityCard({ mainImage, heading, content, images }) {
   };
 
   return (
-    <Card className="w-full max-w-xl overflow-hidden">
-      <div className="relative aspect-[4/3] w-full">
-        <Image
-          src={mainImage}
-          alt={heading}
-          fill
-          className="object-cover"
-          priority
-        />
+    <Card className="w-full max-w-xl shadow-lg overflow-hidden">
+      <div className="p-5  rounded-lg">
+        <div className="relative aspect-video w-full shadow-lg rounded-lg">
+          <Image
+            src={mainImage}
+            alt={heading}
+            fill
+            className="object-cover rounded-[14px]"
+            priority
+          />
+        </div>
       </div>
+
       <CardContent className="p-6">
         <h2 className="text-2xl font-bold mb-2">{heading}</h2>
         <p className="text-neutral-500 mb-6 dark:text-neutral-400">{content}</p>
@@ -48,7 +51,7 @@ function FacilityCard({ mainImage, heading, content, images }) {
                 <div
                   key={index}
                   className={cn(
-                    "relative min-w-[200px] aspect-[4/3] rounded-lg overflow-hidden",
+                    "relative min-w-[200px] aspect-[4/3] rounded-lg overflow-hidden shadow-lg",
                     index === activeIndex &&
                       "ring-2 ring-neutral-900 dark:ring-neutral-50"
                   )}
@@ -76,12 +79,7 @@ function FacilityCard({ mainImage, heading, content, images }) {
   );
 }
 
-export default function Services({
-  images,
-  heading,
-  content,
-  mainImage,
-}) {
+export default function Services({ images, heading, content, mainImage }) {
   return (
     <div className="grid gap-8 p-4 md:p-6">
       <FacilityCard

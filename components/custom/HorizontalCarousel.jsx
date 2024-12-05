@@ -16,7 +16,7 @@ export function CardStack({ cards, cardShuffled, setShuffleCards }) {
   }
   return (
     <div
-      className="relative w-96 h-52 "
+      className="relative w-[810px] h-[400px] "
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -45,7 +45,7 @@ export function CardStack({ cards, cardShuffled, setShuffleCards }) {
               <CardContent className="flex p-0 h-full">
                 <Image
                   onClick={imageClick}
-                  src={"/main/about.png"}
+                  src={card}
                   alt="hello"
                   width={900}
                   height={700}
@@ -61,17 +61,51 @@ export function CardStack({ cards, cardShuffled, setShuffleCards }) {
   );
 }
 
-export default function HorizontalCarousel({
-  cards,
-}) {
+export default function HorizontalCarousel({ cards }) {
   const [cardShuffled, setShuffleCards] = useState(cards);
+
+  function imageClick(direction) {
+    setShuffleCards((prevCards) => {
+      const [first, second, ...rest] = prevCards; // Destructure the first two cards and the rest
+  
+      if (direction === 'left') {
+        return [...rest, first, second]; // Left traversal: move first two elements to the end
+      } else if (direction === 'right') {
+        return [second, ...rest, first]; // Right traversal: move first element to the end
+      }
+      return prevCards; // No change if no valid direction is given
+    });
+  }
+
+  function rightButton() {
+    imageClick("right")
+  }
+  function leftButton() {
+    imageClick("left")
+  }
   return (
-    <div className="flex flex-row">
+    <div className="flex w-full   justify-evenly items-center flex-row">
+      <div onClick={leftButton}>
+        <Image
+          src={"/homepage/leftbutton.svg"}
+          width={40}
+          height={21}
+          alt="leftbutton"
+        />
+      </div>
       <CardStack
         cardShuffled={cardShuffled}
         setShuffleCards={setShuffleCards}
         cards={cards}
       />
+      <div onClick={rightButton}>
+        <Image
+          src={"/homepage/rightbutton.svg"}
+          width={40}
+          height={21}
+          alt="rightbutton"
+        />
+      </div>
     </div>
   );
 }

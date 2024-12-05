@@ -4,6 +4,8 @@ import { useMenuContext } from "@/contexts/MenuContext";
 import OurProjects from "./OurProjects";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
+import NewsCarousel from "./news-carousel";
+import NewsSection from "./NewsSection";
 
 export function Landing() {
   const { isMenuOpen, setMenu } = useMenuContext();
@@ -14,6 +16,7 @@ export function Landing() {
         <HeroSection />
         <AboutSection/>
         <OurProjects />
+        <NewsSection />
       </div>
     </div>
   );
