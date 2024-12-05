@@ -14,7 +14,7 @@ export function ServiceCard({ service, reverse = false }: ServiceCardProps) {
       <div className={`w-full md:w-[620px] h-[360px] md:h-full ${reverse ? 'md:order-2' : ''}`}>
         <img
           alt={service.title}
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full rounded-[20px]"
           src={service.image}
         />
       </div>
@@ -37,7 +37,7 @@ export function ServiceCard({ service, reverse = false }: ServiceCardProps) {
             ))}
           </ul>
           <Button
-            className="w-[190px] h-[50px] md:w-auto bg-teal-500 hover:bg-teal-600 text-white font-medium text-base py-3 px-6"
+            className="w-[190px] h-[50px] md:w-auto bg-teal-500 hover:bg-teal-600 text-white font-medium text-base py-3 px-6 rounded-[10px]"
           >
             Book Now
           </Button>
