@@ -8,14 +8,14 @@ import Image from "next/image";
 
 function Tabs({ tabs, curr, handleOnClick }) {
   return (
-    <div className="flex w-full justify-center items-center flex-row gap-2">
+    <div className="flex w-full h-11 justify-center items-center flex-row gap-2">
       {tabs.map((item, index) => {
         return (
           <Button
             key={item.name}
             isSelected={curr === index}
             label={item.name}
-            size={' h-[100px] w-[200px] text-sm sm:h-[20px] sm:w-[20px] md:h-[20px] md:w-[20px] '}
+            size={' h-[40px] w-[200px] text-xs md:text-lg sm:text-md sm:h-[10px] sm:w-[300px] md:h-[58px] md:w-[300px] '}
             onClick={() => handleOnClick(index)}
           />
         );
