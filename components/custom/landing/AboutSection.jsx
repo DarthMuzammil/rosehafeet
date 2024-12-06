@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import SectionHeading from "../SectionHeading";
-import { aboutUs } from "@/lib/homepage";
+import { aboutUs } from "@/lib/homepage/homepage";
 
 export default function AboutSection() {
   return (

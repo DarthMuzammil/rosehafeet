@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils/utils"
 
 const newsItems = [
   {
@@ -42,7 +42,6 @@ const newsItems = [
 
 export default function NewsCarousel() {
   const [currentSlide, setCurrentSlide] = React.useState(0)
-  console.log(currentSlide)
   return (
     (<div
       className="w-full bg-white min-h-screen flex flex-col items-center justify-center p-8 dark:bg-neutral-950">

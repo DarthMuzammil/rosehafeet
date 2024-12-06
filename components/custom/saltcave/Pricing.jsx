@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import SectionHeading from "../SectionHeading";
-import Button from "./Button";
+import Button from "../../shared/Button";
 import ChildSVG from "@/public/saltcave/pricing/child.svg";
 import Image from "next/image";
 

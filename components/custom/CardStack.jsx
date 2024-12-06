@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image";
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils/utils"
 
 export default function CardStack({
   cards,

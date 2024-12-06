@@ -2,7 +2,7 @@
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import Image from "next/image";
 
 function FacilityCard({ mainImage, heading, content, images }) {

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Button from "./Button";
+import Button from "../../shared/Button";
 import {
   Card,
   CardContent,
@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import SectionHeading from "../SectionHeading";
-import { products } from "@/lib/saltcave";
+import { products } from "@/lib/saltcave/saltcave";
 
 function ProductItem({ product }) {
   return (

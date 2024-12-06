@@ -3,9 +3,9 @@ import HeroSection from "@/components/custom/landing/HeroSection";
 import Benefits from "@/components/custom/saltcave/Benefits";
 import Pricing from "@/components/custom/saltcave/Pricing";
 import SaltCaveFooter from "@/components/custom/saltcave/SaltCaveFooter";
-import { pricing } from "@/lib/saltcave";
+import { pricing } from "@/lib/saltcave/saltcave";
 import ProductShowcase from "@/components/custom/saltcave/Products";
-import { heroSectionSlides } from "@/lib/saltcave";
+import { heroSectionSlides } from "@/lib/saltcave/saltcave";
 export default function SaltCave() {
   return (
     <>

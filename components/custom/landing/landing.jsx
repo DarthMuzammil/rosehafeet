@@ -6,7 +6,7 @@ import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import NewsCarousel from "./news-carousel";
 import NewsSection from "./NewsSection";
-import { heroSectionSlides } from "@/lib/homepage";
+import { heroSectionSlides } from "@/lib/homepage/homepage";
 
 export function Landing() {
   const { isMenuOpen, setMenu } = useMenuContext();

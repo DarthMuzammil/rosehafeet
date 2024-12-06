@@ -1,40 +1,23 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Dumbbell, Droplet, NotebookIcon as Lotus, ShieldCheck } from 'lucide-react'
-import { useState } from "react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { useState } from "react";
+import Image from "next/image";
+import LocalisedButton from "@/components/shared/LocalisedButton";
 
-export default function PricingPage() {
-  const [selectedGender, setSelectedGender] = useState("men")
-
-  const services = [
-    {
-      title: "دخول المسبح",
-      icon: ShieldCheck,
-      options: [
-        { duration: "ساعة واحدة ", price: 25 },
-      ],
-    },
-    {
-      title: "المساج العضلي",
-      icon: Lotus,
-      options: [
-        { duration: "30 دقيقة", price: 100 },
-        { duration: "ساعة واحدة", price: 175 },
-      ],
-    },
-  ]
-
+export default function PricingPage({ pricings }) {
+  const [selectedGender, setSelectedGender] = useState("men");
   return (
-    <div className="min-h-screen bg-[#f8f9fa] bg-[url('/wavy-pattern.svg')] py-16">
+    <div className=" bg-[#f8f9fa] bg-[url('/poolarea/pricingbg.jpeg')] py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-center text-4xl font-bold text-[#1e6f5c] mb-4">الأسعار</h1>
+        <h1 className="text-center text-4xl font-bold text-[#1e6f5c] mb-4">
+          الأسعار
+        </h1>
         <p className="text-center text-xl text-gray-600 mb-8">
           اختر الباقة المثالية للرحلتك العافية
         </p>
 
-        {/* Gender Toggle */}
         <div className="flex justify-center gap-2 mb-12">
           <Button
             onClick={() => setSelectedGender("men")}
@@ -58,30 +41,46 @@ export default function PricingPage() {
           </Button>
         </div>
 
-        {/* Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {services.map((service) => (
-            <Card key={service.title} className="overflow-hidden shadow-lg">
+          {pricings.map((service, index) => (
+            <Card
+              key={service.title + index}
+              className="overflow-hidden shadow-lg"
+            >
               <CardHeader className="bg-gradient-to-r from-[#2b4162] to-[#1e6f5c] p-6">
                 <div className="flex items-center gap-4">
-                  <service.icon className="h-8 w-8 text-white" />
-                  <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
+                  <Image
+                    src={service.icon}
+                    width={50}
+                    height={50}
+                    alt="priceijij"
+                  />
+                  <h3 className="text-2xl font-semibold text-white">
+                    {service.title}
+                  </h3>
                 </div>
               </CardHeader>
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  {service.options.map((option) => (
+              <CardContent className="p-6 h-full">
+                <div className="flex flex-col justify-between  h-1/2">
+                  {service.options.map((option, index) => (
                     <div
-                      key={option.duration}
+                      key={option.duration + index}
                       className="flex items-center justify-between border rounded-lg p-4"
                     >
                       <span className="text-gray-600">{option.duration}</span>
                       <span className="font-semibold">{option.price} AED</span>
                     </div>
                   ))}
-                  <Button className="w-full bg-gradient-to-r from-[#2b4162] to-[#1e6f5c] text-white hover:opacity-90 transition-opacity">
-                    احجز الآن
-                  </Button>
+                  <div className="flex-grow"></div>{" "}
+                  {/* This will push the button to the bottom */}
+                  <div className="flex flex-col justify-center items-center mb-4">
+                    {" "}
+                    {/* Add margin-bottom */}
+                    <LocalisedButton
+                      labelArabic={"احجز الآن"}
+                      labelEnglish={"Book Now"}
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -89,10 +88,9 @@ export default function PricingPage() {
         </div>
 
         <p className="text-center text-gray-600 mt-12 text-3xl">
-        الباقات المخصصة والحجوزات الجماعية متوفرة عند الطلب
+          الباقات المخصصة والحجوزات الجماعية متوفرة عند الطلب
         </p>
       </div>
     </div>
-  )
+  );
 }
-

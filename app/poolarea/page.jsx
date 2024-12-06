@@ -1,11 +1,14 @@
 "use client";
 import HeroSection from "@/components/custom/landing/HeroSection";
-import { services } from "@/lib/poolarea";
 import { ServiceCard } from "@/components/custom/poolarea/service-card";
 import PricingPage  from "@/components/custom/poolarea/pricing-page";
 import WellnessCTA  from "@/components/custom/poolarea/wellness-cta";
-import { heroSectionSlides } from "@/lib/poolarea";
+import { heroSectionSlides } from "@/lib/poolarea/english";
+import { useLanguageContext } from "@/contexts/LanguageContext";
+import { getLocalizedContent } from "@/lib/poolarea";
 export default function PoolArea() {
+  const {lang} = useLanguageContext();
+  const {services, pricings} = getLocalizedContent(lang, "saltcave")
   return (
     <>
       <HeroSection slides={heroSectionSlides} />
@@ -20,7 +23,7 @@ export default function PoolArea() {
           ))}
         </div>
       </div>
-      <PricingPage/>
+      <PricingPage pricings={pricings}/>
       <WellnessCTA/>
     </>
   );

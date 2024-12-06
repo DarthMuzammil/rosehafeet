@@ -1,8 +1,8 @@
 "use client";
 import SectionHeading from "../SectionHeading";
-import { newsImages } from "@/lib/homepage";
+import { newsImages } from "@/lib/homepage/homepage";
 import HorizontalCarousel from "../HorizontalCarousel";
-import Button from "../saltcave/Button";
+import Button from "../../shared/Button";
 
 function NewsFooter() {
   return (

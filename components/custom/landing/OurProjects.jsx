@@ -1,7 +1,7 @@
 "use client";
 import SectionHeading from "../SectionHeading";
 import Services from "@/components/shared/services/Services";
-import { facilities } from "@/lib/homepage";
+import { facilities } from "@/lib/homepage/homepage";
 
 export default function OurProjects() {
   return (

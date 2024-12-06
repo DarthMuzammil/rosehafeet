@@ -4,22 +4,16 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useMenuContext } from "@/contexts/MenuContext";
-import { navigationTabs } from "@/lib/homepage";
+import { navigationTabs } from "@/lib/homepage/homepage";
 import Link from "next/link";
+import LocalisedButton from "../shared/LocalisedButton";
+import { MobileMenu } from "../shared/MobileMenu";
 
 function MobileMenuIcon({ setMenu, isMenuOpen }) {
   return (
     <button className="md:hidden" onClick={() => setMenu(!isMenuOpen)}>
       {isMenuOpen ? <X /> : <Menu />}
     </button>
-  );
-}
-
-function DesktopButton() {
-  return (
-    <Button className="hidden md:inline-flex text-[22px] font-poppins font-semibold leading-[33px] bg-gradient-to-r from-[#2A3676] to-[#00A445] text-white px-6 py-2 rounded-md shadow-md hover:opacity-90">
-      العربية
-    </Button>
   );
 }
 
@@ -47,10 +41,12 @@ function DesktopNav({ pathname }) {
 
 function LogoSection() {
   return (
-    <Link href={"/"} className="flex flex-row">
+    <><Link href={"/"} className="hidden md:visible md:flex md:flex-row">
       <Image src="/logo1.png" alt="Spa treatment" width={134} height={110} />
       <Image src="/logo2.svg" alt="Spa treatment" width={130} height={48} />
-    </Link>
+    </Link><Link href={"/"} className=" flex flex-row">
+        <Image src="/logo2.svg" alt="Spa treatment" width={130} height={48} />
+      </Link></>
   );
 }
 
@@ -59,7 +55,7 @@ function MobileMenuOverlay({ isMenuOpen, pathname }) {
     isMenuOpen && (
       <div className=" absolute top-0 left-0 inset-0 bg-white h-full z-40 flex flex-col items-center justify-center">
         <div className="bg-white  max-w-sm p-6 rounded-lg shadow-lg">
-          <nav className="flex flex-col items-center space-y-4">
+          <nav className="flex flex-col bg-black  items-center space-y-4">
             {navigationTabs.map((item) => (
               <a
                 key={item.displayname}
@@ -83,6 +79,7 @@ function MobileMenuOverlay({ isMenuOpen, pathname }) {
 
 export default function Header() {
   const { isMenuOpen, setMenu } = useMenuContext();
+
   const pathname = usePathname();
 
   return (
@@ -92,12 +89,12 @@ export default function Header() {
           <div className="flex items-center justify-between py-4">
             <LogoSection />
             <DesktopNav pathname={pathname} />
-            <DesktopButton />
+            <LocalisedButton labelArabic={"English"} labelEnglish={"العربية"} />
             <MobileMenuIcon setMenu={setMenu} isMenuOpen={isMenuOpen} />
           </div>
         </div>
       </header>
-      <MobileMenuOverlay pathname={pathname} isMenuOpen={isMenuOpen} />
+      <MobileMenu isOpen={isMenuOpen} onClose={() => setMenu(false)} />
     </>
   );
 }

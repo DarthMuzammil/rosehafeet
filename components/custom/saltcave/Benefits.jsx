@@ -1,6 +1,6 @@
 "use client";
 import SectionHeading from "../SectionHeading";
-import { benefits } from "@/lib/saltcave";
+import { benefits } from "@/lib/saltcave/saltcave";
 
 function Benefit({ benefit }) {
   return (

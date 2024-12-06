@@ -1,10 +1,10 @@
 "use client";
 import HeroSection from "@/components/custom/landing/HeroSection";
-import { services } from "@/lib/wellness";
+import { services } from "@/lib/wellness/wellness";
 import { ServiceCard } from "@/components/custom/poolarea/service-card";
 import PricingPage  from "@/components/custom/wellness/pricing-page";
 import WellnessCTA  from "@/components/custom/poolarea/wellness-cta";
-import { heroSectionSlides } from "@/lib/wellness";
+import { heroSectionSlides } from "@/lib/wellness/wellness";
 export default function Wellness() {
   return (
     <>

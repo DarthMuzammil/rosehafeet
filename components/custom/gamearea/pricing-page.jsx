@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { useState } from "react"
 import Image from "next/image"
-import { pricings } from "@/lib/gamearea"
+import { pricings } from "@/lib/gamearea/gamearea"
 
 export default function PricingPage() {
   const [selectedGender, setSelectedGender] = useState("men")

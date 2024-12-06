@@ -1,10 +1,10 @@
 "use client";
 import HeroSection from "@/components/custom/landing/HeroSection";
-import { services } from "@/lib/gamearea";
+import { services } from "@/lib/gamearea/gamearea";
 import { ServiceCard } from "@/components/custom/gamearea/service-card";
 import PricingPage from "@/components/custom/gamearea/pricing-page";
 import WellnessCTA from "@/components/custom/gamearea/wellness-cta";
-import { heroSectionSlides } from "@/lib/gamearea";
+import { heroSectionSlides } from "@/lib/gamearea/gamearea";
 
 
 
