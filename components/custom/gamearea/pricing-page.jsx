@@ -2,55 +2,13 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Dumbbell, Droplet, NotebookIcon as Lotus, ShieldCheck } from 'lucide-react'
 import { useState } from "react"
-
-interface PricingOption {
-  duration: string
-  price: number
-}
-
-interface ServiceCard {
-  title: string
-  icon: React.ElementType
-  options: PricingOption[]
-}
+import Image from "next/image"
+import { pricings } from "@/lib/gamearea"
 
 export default function PricingPage() {
-  const [selectedGender, setSelectedGender] = useState<"men" | "women">("men")
+  const [selectedGender, setSelectedGender] = useState("men")
 
-  const services: ServiceCard[] = [
-    {
-      title: "Pool Entrance",
-      icon: ShieldCheck,
-      options: [
-        { duration: "1 Hour", price: 25 },
-      ],
-    },
-    {
-      title: "Indian Ayurvedic Massage",
-      icon: Lotus,
-      options: [
-        { duration: "30 Minutes", price: 100 },
-        { duration: "1 Hour", price: 175 },
-      ],
-    },
-    {
-      title: "Sport Massage",
-      icon: Dumbbell,
-      options: [
-        { duration: "30 Minutes", price: 100 },
-        { duration: "1 Hour", price: 175 },
-      ],
-    },
-    {
-      title: "Moroccan Bath",
-      icon: Droplet,
-      options: [
-        { duration: "1 Session", price: 100 },
-      ],
-    },
-  ]
 
   return (
     <div className="min-h-screen bg-[#f8f9fa] bg-[url('/wavy-pattern.svg')] py-16">
@@ -86,17 +44,22 @@ export default function PricingPage() {
 
         {/* Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {services.map((service) => (
-            <Card key={service.title} className="overflow-hidden shadow-lg">
+          {pricings.map((pricing) => (
+            <Card key={pricing.title} className="overflow-hidden shadow-lg">
               <CardHeader className="bg-gradient-to-r from-[#2b4162] to-[#1e6f5c] p-6">
                 <div className="flex items-center gap-4">
-                  <service.icon className="h-8 w-8 text-white" />
-                  <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
+                  <Image
+                  src={pricing.icon}
+                  width={50}
+                  height={50}
+                  alt="priceijij"
+                  />
+                  <h3 className="text-2xl font-semibold text-white">{pricing.title}</h3>
                 </div>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-4">
-                  {service.options.map((option) => (
+                  {pricing.options.map((option) => (
                     <div
                       key={option.duration}
                       className="flex items-center justify-between border rounded-lg p-4"

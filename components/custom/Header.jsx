@@ -5,13 +5,7 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useMenuContext } from "@/contexts/MenuContext";
 import { navigationTabs } from "@/lib/homepage";
-import { useEffect } from "react";
-
-// function LogoSection() {
-//   return (
-
-//   )
-// }
+import Link from "next/link";
 
 function MobileMenuIcon({ setMenu, isMenuOpen }) {
   return (
@@ -53,10 +47,10 @@ function DesktopNav({ pathname }) {
 
 function LogoSection() {
   return (
-    <div className="flex flex-row">
+    <Link href={"/"} className="flex flex-row">
       <Image src="/logo1.png" alt="Spa treatment" width={134} height={110} />
       <Image src="/logo2.svg" alt="Spa treatment" width={130} height={48} />
-    </div>
+    </Link>
   );
 }
 
