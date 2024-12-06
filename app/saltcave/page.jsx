@@ -4,12 +4,14 @@ import Benefits from "@/components/custom/saltcave/Benefits";
 import Pricing from "@/components/custom/saltcave/Pricing";
 import SaltCaveFooter from "@/components/custom/saltcave/SaltCaveFooter";
 import { pricing } from "@/lib/saltcave";
+import ProductShowcase from "@/components/custom/saltcave/Products";
 export default function SaltCave() {
   return (
     <>
       <HeroSection />
       <Benefits />
       <Pricing pricing={pricing} />
+      <ProductShowcase />
       <SaltCaveFooter />
     </>
   );
