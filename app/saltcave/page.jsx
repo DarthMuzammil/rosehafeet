@@ -7,10 +7,10 @@ import { pricing } from "@/lib/saltcave";
 export default function SaltCave() {
   return (
     <>
-      <HeroSection />
-      <Benefits />
+      {/* <HeroSection />
+      <Benefits /> */}
       <Pricing pricing={pricing} />
-      <SaltCaveFooter />
+      {/* <SaltCaveFooter /> */}
     </>
   );
 }

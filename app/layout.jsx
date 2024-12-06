@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
       className={acme.className}
       >
         <MenuContextProvider>
-          <Header />
+          {/* <Header /> */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </MenuContextProvider>
       </body>
     </html>
