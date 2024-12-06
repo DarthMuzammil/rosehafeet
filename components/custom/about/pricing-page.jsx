@@ -6,7 +6,7 @@ import { Dumbbell, Droplet, NotebookIcon as Lotus, ShieldCheck } from 'lucide-re
 import { useState } from "react"
 
 export default function PricingPage() {
-  const [selectedGender, setSelectedGender] = useState("men")
+  const [selectedGender, setSelectedGender] = useState<"men" | "women">("men")
 
   const services = [
     {

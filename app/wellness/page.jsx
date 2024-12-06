@@ -1,11 +1,11 @@
 "use client";
 import HeroSection from "@/components/custom/landing/HeroSection";
-import { services } from "@/lib/poolarea";
+import { services } from "@/lib/wellness";
 import { ServiceCard } from "@/components/custom/poolarea/service-card";
-import PricingPage  from "@/components/custom/poolarea/pricing-page";
+import PricingPage  from "@/components/custom/wellness/pricing-page";
 import WellnessCTA  from "@/components/custom/poolarea/wellness-cta";
-import { heroSectionSlides } from "@/lib/poolarea";
-export default function PoolArea() {
+import { heroSectionSlides } from "@/lib/wellness";
+export default function Wellness() {
   return (
     <>
       <HeroSection slides={heroSectionSlides} />

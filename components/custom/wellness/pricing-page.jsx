@@ -10,13 +10,6 @@ export default function PricingPage() {
 
   const services = [
     {
-      title: "Pool Entrance",
-      icon: ShieldCheck,
-      options: [
-        { duration: "1 Hour", price: 25 },
-      ],
-    },
-    {
       title: "Indian Ayurvedic Massage",
       icon: Lotus,
       options: [
@@ -30,13 +23,6 @@ export default function PricingPage() {
       options: [
         { duration: "30 Minutes", price: 100 },
         { duration: "1 Hour", price: 175 },
-      ],
-    },
-    {
-      title: "Moroccan Bath",
-      icon: Droplet,
-      options: [
-        { duration: "1 Session", price: 100 },
       ],
     },
   ]

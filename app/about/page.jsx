@@ -4,8 +4,8 @@ import { services } from "@/lib/poolarea";
 import { ServiceCard } from "@/components/custom/poolarea/service-card";
 import PricingPage  from "@/components/custom/poolarea/pricing-page";
 import WellnessCTA  from "@/components/custom/poolarea/wellness-cta";
-import { heroSectionSlides } from "@/lib/poolarea";
-export default function PoolArea() {
+import { heroSectionSlides } from "@/lib/wellness";
+export default function About() {
   return (
     <>
       <HeroSection slides={heroSectionSlides} />
