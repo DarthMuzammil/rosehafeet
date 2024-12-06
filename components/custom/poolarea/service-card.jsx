@@ -40,7 +40,7 @@ export function ServiceCard({ service, reverse = false }) {
             ))}
           </ul>
           <Button className="w-[190px] h-[50px] md:w-auto bg-teal-500 hover:bg-teal-600 text-white font-medium text-base py-3 px-6 rounded-[10px]">
-            Book Now
+            احجز الآن
           </Button>
         </div>
       </div>

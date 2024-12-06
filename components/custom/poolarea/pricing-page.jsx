@@ -10,33 +10,18 @@ export default function PricingPage() {
 
   const services = [
     {
-      title: "Pool Entrance",
+      title: "دخول المسبح",
       icon: ShieldCheck,
       options: [
-        { duration: "1 Hour", price: 25 },
+        { duration: "ساعة واحدة ", price: 25 },
       ],
     },
     {
-      title: "Indian Ayurvedic Massage",
+      title: "المساج العضلي",
       icon: Lotus,
       options: [
-        { duration: "30 Minutes", price: 100 },
-        { duration: "1 Hour", price: 175 },
-      ],
-    },
-    {
-      title: "Sport Massage",
-      icon: Dumbbell,
-      options: [
-        { duration: "30 Minutes", price: 100 },
-        { duration: "1 Hour", price: 175 },
-      ],
-    },
-    {
-      title: "Moroccan Bath",
-      icon: Droplet,
-      options: [
-        { duration: "1 Session", price: 100 },
+        { duration: "30 دقيقة", price: 100 },
+        { duration: "ساعة واحدة", price: 175 },
       ],
     },
   ]
@@ -44,9 +29,9 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-[#f8f9fa] bg-[url('/wavy-pattern.svg')] py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-center text-4xl font-bold text-[#1e6f5c] mb-4">Pricing</h1>
+        <h1 className="text-center text-4xl font-bold text-[#1e6f5c] mb-4">الأسعار</h1>
         <p className="text-center text-xl text-gray-600 mb-8">
-          Choose the perfect package for your wellness journey
+          اختر الباقة المثالية للرحلتك العافية
         </p>
 
         {/* Gender Toggle */}
@@ -59,7 +44,7 @@ export default function PricingPage() {
                 : "bg-gray-100 text-gray-600"
             }`}
           >
-            Men
+            للرجال
           </Button>
           <Button
             onClick={() => setSelectedGender("women")}
@@ -69,7 +54,7 @@ export default function PricingPage() {
                 : "bg-gray-100 text-gray-600"
             }`}
           >
-            Women
+            للنساء
           </Button>
         </div>
 
@@ -95,7 +80,7 @@ export default function PricingPage() {
                     </div>
                   ))}
                   <Button className="w-full bg-gradient-to-r from-[#2b4162] to-[#1e6f5c] text-white hover:opacity-90 transition-opacity">
-                    Book Now
+                    احجز الآن
                   </Button>
                 </div>
               </CardContent>
@@ -103,8 +88,8 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <p className="text-center text-gray-600 mt-12">
-          Custom packages and group bookings are available upon request.
+        <p className="text-center text-gray-600 mt-12 text-3xl">
+        الباقات المخصصة والحجوزات الجماعية متوفرة عند الطلب
         </p>
       </div>
     </div>
