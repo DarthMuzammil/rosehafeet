@@ -42,7 +42,7 @@ export function ServiceCard({ service, reverse = false }) {
                 {service.category}
               </h2>
               <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-b from-[#2A3676] to-[#00A445] bg-clip-text text-transparent">
-                {service.title}
+              <span dir="rtl">{service.title}</span>
               </h3>
             </>
           )}
