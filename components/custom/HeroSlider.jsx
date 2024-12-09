@@ -5,7 +5,6 @@ import Image from "next/image"
 export default function HeroSlider({slides}) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [fadeIn, setFadeIn] = useState(true)
-  console.log(slides[0].color)
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setFadeIn(false) // Start fade out

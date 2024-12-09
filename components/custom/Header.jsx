@@ -11,7 +11,7 @@ import { MobileMenu } from "../shared/MobileMenu";
 
 function MobileMenuIcon({ setMenu, isMenuOpen }) {
   return (
-    <button className="md:hidden" onClick={() => setMenu(!isMenuOpen)}>
+    <button className="2xl:hidden" onClick={() => setMenu(!isMenuOpen)}>
       {isMenuOpen ? <X /> : <Menu />}
     </button>
   );
@@ -19,7 +19,7 @@ function MobileMenuIcon({ setMenu, isMenuOpen }) {
 
 function DesktopNav({ pathname }) {
   return (
-    <nav className="hidden md:flex space-x-8">
+    <nav className="hidden 2xl:flex space-x-8">
       {navigationTabs.map((item, index) => (
         <div key={item.displayname} className="flex flex-col">
           <a
@@ -41,41 +41,14 @@ function DesktopNav({ pathname }) {
 
 function LogoSection() {
   return (
-    <><Link href={"/"} className="hidden md:visible md:flex md:flex-row">
+    <><Link href={"/"} className="hidden  2xl:visible 2xl:flex 2xl:flex-row">
       <Image src="/logo1.png" alt="Spa treatment" width={134} height={110} />
-      <Image src="/logo2.svg" alt="Spa treatment" width={130} height={48} />
     </Link><Link href={"/"} className=" flex flex-row">
         <Image src="/logo2.svg" alt="Spa treatment" width={130} height={48} />
       </Link></>
   );
 }
 
-function MobileMenuOverlay({ isMenuOpen, pathname }) {
-  return (
-    isMenuOpen && (
-      <div className=" absolute top-0 left-0 inset-0 bg-white h-full z-40 flex flex-col items-center justify-center">
-        <div className="bg-white  max-w-sm p-6 rounded-lg shadow-lg">
-          <nav className="flex flex-col bg-black  items-center space-y-4">
-            {navigationTabs.map((item) => (
-              <a
-                key={item.displayname}
-                href={`${item.path.toLowerCase()}`}
-                className={`text-[22px] font-semibold text-gray-700 hover:bg-gradient-to-r ${
-                  pathname === item.path
-                    ? ` bg-gradient-to-r from-[#2A3676] to-[#00A445] bg-clip-text text-transparent opacity-90 `
-                    : ` `
-                } hover:from-[#2A3676] hover:to-[#00A445] hover:bg-clip-text hover:text-transparent`}
-                onClick={() => setMenu(false)}
-              >
-                {item.displayname}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </div>
-    )
-  );
-}
 
 export default function Header() {
   const { isMenuOpen, setMenu } = useMenuContext();
