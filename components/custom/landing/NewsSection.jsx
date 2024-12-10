@@ -32,7 +32,7 @@ function NewsFooter() {
 
 export default function NewsSection() {
   return (
-    <section className="flex flex-col items-center gap-12 py-12 px-6">
+    <section id="about" className="flex flex-col items-center gap-12 py-12 px-6">
       <SectionHeading className="p-4">News</SectionHeading>
       <HorizontalCarousel cards={newsImages} />
       <NewsFooter />
