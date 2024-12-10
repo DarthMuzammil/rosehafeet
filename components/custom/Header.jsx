@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "../ui/button";
+
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -51,7 +51,7 @@ function LogoSection() {
 
 
 export default function Header() {
-  const { isMenuOpen, setMenu } = useMenuContext();
+  const { isMenuOpen, setMenu } = useMenuContext(true);
 
   const pathname = usePathname();
 
