@@ -9,7 +9,7 @@ function ServiceCard({ service, reverse = false }) {
   return (
     <div className="flex flex-col md:flex-row text-white w-full max-w-[1240px] mx-auto h-[740px] md:h-[360px]">
       <div
-        className={`w-full md:w-[620px] h-[360px] md:h-full ${
+        className={`w-full md:w-[620px] h-[360px] space-x-6 md:h-full ${
           reverse ? "md:order-2" : ""
         }`}
       >
@@ -48,7 +48,7 @@ function ServiceCard({ service, reverse = false }) {
               </h3>
             </>
           )}
-          <ul className="space-y-2 md:space-y-3">
+          <ul className="space-y-0 flex flex-col justify-evenly h-[200px]">
             {service.benefits.map((benefit, index) => (
               <li key={index} className="flex items-center gap-3">
                 <Check className="w-5 h-5 shrink-0 text-teal-400" />
@@ -58,6 +58,7 @@ function ServiceCard({ service, reverse = false }) {
               </li>
             ))}
           </ul>
+
           <div className="flex justify-center items-center flex-row w-full md:hidden">
             <LocalisedButton
               labelArabic={"احجز الآن"}
@@ -69,7 +70,6 @@ function ServiceCard({ service, reverse = false }) {
             <LocalisedButton
               labelArabic={"احجز الآن"}
               labelEnglish={"Book Now"}
-      
             />
           </div>
         </div>
