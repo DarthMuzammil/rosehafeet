@@ -10,14 +10,14 @@ import { Separator } from "@/components/ui/separator"
 
 export function MobileMenu({ isOpen, onClose }) {
   const menuItems = [
-    { title: "Home", href: "#" },
+    { title: "Home", href: "/" },
     { title: "Salt Cave", href: "saltcave" },
     { title: "Sulphur Pool", href: "poolarea" },
     { title: "Fun Activities", href: "gamearea" },
     { title: "Wellness & Spa", href: "wellness" },
-    { title: "About", href: "#about" },
-    { title: "Contact", href: "#contact" },
-    { title: "Careers", href: "#careers" },
+    { title: "About", href: "about" },
+    { title: "Contact", href: "contact" },
+    { title: "Careers", href: "careers" },
   ]
 
   if (!isOpen) return null
