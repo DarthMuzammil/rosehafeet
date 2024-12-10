@@ -41,14 +41,16 @@ function DesktopNav({ pathname }) {
 
 function LogoSection() {
   return (
-    <><Link href={"/"} className="hidden  2xl:visible 2xl:flex 2xl:flex-row">
-      <Image src="/logo1.png" alt="Spa treatment" width={134} height={110} />
-    </Link><Link href={"/"} className=" flex flex-row">
+    <>
+      <Link href={"/"} className="hidden  2xl:visible 2xl:flex 2xl:flex-row">
+        <Image src="/logo1.png" alt="Spa treatment" width={134} height={110} />
+      </Link>
+      <Link href={"/"} className=" flex flex-row">
         <Image src="/logo2.svg" alt="Spa treatment" width={130} height={48} />
-      </Link></>
+      </Link>
+    </>
   );
 }
-
 
 export default function Header() {
   const { isMenuOpen, setMenu } = useMenuContext(true);
@@ -62,7 +64,12 @@ export default function Header() {
           <div className="flex items-center justify-between py-4">
             <LogoSection />
             <DesktopNav pathname={pathname} />
-            <LocalisedButton labelArabic={"English"} labelEnglish={"العربية"} />
+            <div className="hidden 2xl:block">
+              <LocalisedButton
+                labelArabic={"English"}
+                labelEnglish={"العربية"}
+              />
+            </div>
             <MobileMenuIcon setMenu={setMenu} isMenuOpen={isMenuOpen} />
           </div>
         </div>

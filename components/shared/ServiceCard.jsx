@@ -1,8 +1,10 @@
+"use client";
+
 import LocalisedButton from "@/components/shared/LocalisedButton";
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { Check } from "lucide-react";
 
-export function ServiceCard({ service, reverse = false }) {
+function ServiceCard({ service, reverse = false }) {
   const { lang } = useLanguageContext();
   return (
     <div className="flex flex-col md:flex-row text-white w-full max-w-[1240px] mx-auto h-[740px] md:h-[360px]">
@@ -42,7 +44,7 @@ export function ServiceCard({ service, reverse = false }) {
                 {service.category}
               </h2>
               <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-b from-[#2A3676] to-[#00A445] bg-clip-text text-transparent">
-              <span dir="rtl">{service.title}</span>
+                <span dir="rtl">{service.title}</span>
               </h3>
             </>
           )}
@@ -56,8 +58,37 @@ export function ServiceCard({ service, reverse = false }) {
               </li>
             ))}
           </ul>
-          <LocalisedButton labelArabic={"احجز الآن"} labelEnglish={"Book Now"} />
+          <div className="flex justify-center items-center flex-row w-full md:hidden">
+            <LocalisedButton
+              labelArabic={"احجز الآن"}
+              labelEnglish={"Book Now"}
+              styles=" w-[90%]"
+            />
+          </div>
+          <div className="hidden md:flex">
+            <LocalisedButton
+              labelArabic={"احجز الآن"}
+              labelEnglish={"Book Now"}
+      
+            />
+          </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ServiceCards({ services }) {
+  return (
+    <div className="container mx-auto py-12 px-4">
+      <div className="space-y-[100px]">
+        {services.map((service, index) => (
+          <ServiceCard
+            key={service.id}
+            service={service}
+            reverse={index % 2 !== 0}
+          />
+        ))}
       </div>
     </div>
   );
