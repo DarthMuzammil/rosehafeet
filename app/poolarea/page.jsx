@@ -1,6 +1,6 @@
 "use client";
 import HeroSection from "@/components/custom/landing/HeroSection";
-import { ServiceCard } from "@/components/custom/poolarea/service-card";
+import ServiceCards from "@/components/shared/ServiceCard";
 import PricingPage  from "@/components/custom/poolarea/pricing-page";
 import WellnessCTA  from "@/components/custom/poolarea/wellness-cta";
 import { heroSectionSlides } from "@/lib/poolarea/english";
@@ -12,17 +12,7 @@ export default function PoolArea() {
   return (
     <>
       <HeroSection slides={heroSectionSlides} />
-      <div className="container mx-auto py-12 px-4">
-        <div className="space-y-[100px]">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={service.id}
-              service={service}
-              reverse={index % 2 !== 0}
-            />
-          ))}
-        </div>
-      </div>
+      <ServiceCards services={services} />
       <PricingPage pricings={pricings}/>
       <WellnessCTA/>
     </>
