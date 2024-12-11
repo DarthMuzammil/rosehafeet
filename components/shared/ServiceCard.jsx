@@ -7,7 +7,8 @@ import { Check } from "lucide-react";
 function ServiceCard({ service, reverse = false }) {
   const { lang } = useLanguageContext();
   return (
-    <div className="flex flex-col md:flex-row text-white w-full max-w-[1240px] mx-auto h-[740px] md:h-[360px]">
+<div className="flex flex-col md:flex-row p-4 text-white w-full max-w-[1240px] mx-auto h-[700px] md:h-[360px] shadow-2xl">
+
       <div
         className={`w-full md:w-[620px] h-[360px] space-x-6 md:h-full ${
           reverse ? "md:order-2" : ""
