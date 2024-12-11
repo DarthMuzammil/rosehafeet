@@ -5,15 +5,74 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils/utils";
 import Image from "next/image";
 
+function CarouselLeftButton({ prevSlide }) {
+  return (
+    <button
+      onClick={prevSlide}
+      className="absolute left-0 z-10 h-8 w-8 flex items-center justify-center bg-white/80 rounded-full shadow-lg dark:bg-neutral-950/80"
+      aria-label="Previous slide"
+    >
+      <ChevronLeft className="h-6 w-6" />
+    </button>
+  );
+}
+
+function CarouselRightButton({ nextSlide }) {
+  return (
+    <button
+      onClick={nextSlide}
+      className="absolute right-0 z-10 h-8 w-8 flex items-center justify-center bg-white/80 rounded-full shadow-lg dark:bg-neutral-950/80"
+      aria-label="Next slide"
+    >
+      <ChevronRight className="h-6 w-6" />
+    </button>
+  );
+}
+function Carousel({
+  prevSlide,
+  activeIndices,
+  images,
+  heading,
+  nextSlide,
+}) {
+  return (
+    <div className=" relative flex items-center gap-4 overflow-hidden">
+      <CarouselLeftButton prevSlide={prevSlide} />
+      <div className="flex gap-4 transition-transform duration-300 ease-in-out">
+        {activeIndices.map((i, index) => (
+          <div
+            key={i}
+            className={cn(
+              "relative min-w-[200px] aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
+            )}
+          >
+            <Image
+              src={images[i]}
+              alt={`${heading} gallery image}`}
+              fill
+              className="object-cover"
+            />
+          </div>
+        ))}
+      </div>
+      <CarouselRightButton nextSlide={nextSlide} />
+    </div>
+  );
+}
 function FacilityCard({ mainImage, heading, content, images }) {
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndices, setActiveIndices] = React.useState([0, 1, 2]);
 
   const nextSlide = () => {
-    setActiveIndex((current) => (current + 1) % images.length);
+    setActiveIndices((prevIndices) =>
+      prevIndices.map((value) => (value === images.length - 1 ? 0 : value + 1))
+    );
   };
 
   const prevSlide = () => {
-    setActiveIndex((current) => (current - 1 + images.length) % images.length);
+    setActiveIndices((prevIndices) =>
+      prevIndices.map((value) => (value === 0 ? images.length - 1 : value - 1))
+    );
   };
 
   return (
@@ -29,51 +88,15 @@ function FacilityCard({ mainImage, heading, content, images }) {
           />
         </div>
       </div>
-
       <CardContent className="p-6">
         <h2 className="text-2xl font-bold mb-2">{heading}</h2>
         <p className="text-neutral-500 mb-6 dark:text-neutral-400">{content}</p>
-
-        <div className="relative">
-          <div className="flex items-center gap-4 overflow-hidden">
-            <button
-              onClick={prevSlide}
-              className="absolute left-0 z-10 h-8 w-8 flex items-center justify-center bg-white/80 rounded-full shadow-lg dark:bg-neutral-950/80"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <div
-              className="flex gap-4 transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${activeIndex * 108}%)` }}
-            >
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  className={cn(
-                    "relative min-w-[200px] aspect-[4/3] rounded-lg overflow-hidden shadow-lg",
-                    index === activeIndex &&
-                      "ring-2 ring-neutral-900 dark:ring-neutral-50"
-                  )}
-                >
-                  <Image
-                    src={image}
-                    alt={`${heading} gallery image ${image}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-            <button
-              onClick={nextSlide}
-              className="absolute right-0 z-10 h-8 w-8 flex items-center justify-center bg-white/80 rounded-full shadow-lg dark:bg-neutral-950/80"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-        </div>
+        <Carousel
+          activeIndices={activeIndices}
+          images={images}
+          nextSlide={nextSlide}
+          prevSlide={prevSlide}
+        />
       </CardContent>
     </Card>
   );
@@ -81,13 +104,11 @@ function FacilityCard({ mainImage, heading, content, images }) {
 
 export default function Services({ images, heading, content, mainImage }) {
   return (
- 
-      <FacilityCard
-        heading={heading}
-        content={content}
-        mainImage={mainImage}
-        images={images}
-      />
-
+    <FacilityCard
+      heading={heading}
+      content={content}
+      mainImage={mainImage}
+      images={images}
+    />
   );
 }
