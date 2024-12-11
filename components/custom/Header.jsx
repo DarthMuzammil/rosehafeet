@@ -59,7 +59,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed w-full z-50  bg-white shadow-md">
+      <header className="xl:relative fixed w-full z-50  bg-white shadow-md">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
             <LogoSection />

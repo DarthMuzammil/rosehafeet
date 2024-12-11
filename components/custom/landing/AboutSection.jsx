@@ -61,7 +61,7 @@ function CompanyBanner() {
 export default function AboutSection() {
   return (
     <>
-      <section id="about" className="hidden xl:flex xl:flex-col">
+      <section id="about" className="hidden  xl:flex xl:flex-col">
         <div className="py-16 md:py-24 justify-center gap-3 flex flex-row">
           <div className="relative" style={{ width: "426px", height: "358px" }}>
             {/* Background image */}
