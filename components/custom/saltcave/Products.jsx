@@ -16,7 +16,7 @@ function ProductItem({ product }) {
   return (
     <Card
       key={product.id}
-      className="bg-white h-[520px]  w-[400px]  sm:h-[500px] sm:w-[400px] rounded-lg   shadow-md overflow-hidden"
+      className="bg-white w-full md:h-[520px]  md:w-[400px] rounded-lg   shadow-md overflow-hidden"
     >
       <CardHeader className="flex flex-row justify-center p-0 items-start">
         <Image
@@ -57,13 +57,13 @@ function ProductItem({ product }) {
 }
 export default function ProductShowcase() {
   return (
-    <section className="w-full bg-[#F5F5F5] py-16 px-4 md:px-6 lg:px-8">
+    <section className="w-full mt-12 bg-[#F5F5F5] py-16 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <SectionHeading className="p-4 text-center mb-8">
+        <SectionHeading className="p-1 text-center mb-8">
           Shop Our Products
         </SectionHeading>
 
-        <div className="grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-col justify-center items-center px-2 md:grid md:place-items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {products.map((product) => (
             <ProductItem key={product.id} product={product} />
           ))}
