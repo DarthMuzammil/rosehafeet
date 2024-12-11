@@ -44,10 +44,11 @@ export default function Benefits() {
       <div
         style={{
           backgroundImage: "url('/saltcave/background.png')",
-          height: "65vh",
+          height: "auto",
           width: "100%",
+          paddingBottom: "32px",
         }}
-        className="flex flex-col md:hidden "
+        className="flex  flex-col md:hidden "
       >
         <div className="flex  justify-center mt-12  items-center flex-row w-full">
           <SectionHeading>Benefits of Salt Cave</SectionHeading>
