@@ -11,7 +11,7 @@ import { MobileMenu } from "../shared/MobileMenu";
 
 function MobileMenuIcon({ setMenu, isMenuOpen }) {
   return (
-    <button className="2xl:hidden" onClick={() => setMenu(!isMenuOpen)}>
+    <button className="xl:hidden" onClick={() => setMenu(!isMenuOpen)}>
       {isMenuOpen ? <X /> : <Menu />}
     </button>
   );
@@ -19,12 +19,12 @@ function MobileMenuIcon({ setMenu, isMenuOpen }) {
 
 function DesktopNav({ pathname }) {
   return (
-    <nav className="hidden 2xl:flex space-x-8">
+    <nav className="hidden xl:flex space-x-8">
       {navigationTabs.map((item, index) => (
         <div key={item.displayname} className="flex flex-col">
           <a
             href={`${item.path.toLowerCase()}`}
-            className={`relative text-[22px] text-gray-500 font-semibold hover:leading-[33px] hover:bg-gradient-to-r ${
+            className={`relative text-[18px] 2xl:text-[22px] text-gray-500 font-semibold hover:leading-[33px] hover:bg-gradient-to-r ${
               pathname === item.path
                 ? ` bg-gradient-to-r from-[#2A3676] to-[#00A445] bg-clip-text text-transparent opacity-90 `
                 : ` `
@@ -41,14 +41,14 @@ function DesktopNav({ pathname }) {
 
 function LogoSection() {
   return (
-    <>
-      <Link href={"/"} className="hidden  2xl:visible 2xl:flex 2xl:flex-row">
+    <div className="flex flex-row">
+      <Link href={"/"} className="hidden  xl:visible xl:flex xl:flex-row">
         <Image src="/logo1.png" alt="Spa treatment" width={134} height={110} />
       </Link>
       <Link href={"/"} className=" flex flex-row">
         <Image src="/logo2.svg" alt="Spa treatment" width={130} height={48} />
       </Link>
-    </>
+    </div>
   );
 }
 
@@ -64,7 +64,7 @@ export default function Header() {
           <div className="flex items-center justify-between py-4">
             <LogoSection />
             <DesktopNav pathname={pathname} />
-            <div className="hidden 2xl:block">
+            <div className="hidden xl:block">
               <LocalisedButton
                 labelArabic={"English"}
                 labelEnglish={"العربية"}
