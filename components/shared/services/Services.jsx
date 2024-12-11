@@ -51,6 +51,7 @@ function Carousel({
               alt={`${heading} gallery image}`}
               fill
               className="object-cover"
+              unoptimized
             />
           </div>
         ))}
