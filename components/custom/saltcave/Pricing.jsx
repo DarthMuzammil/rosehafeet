@@ -126,7 +126,7 @@ export default function Pricing({ pricing }) {
     setCurr(() => index);
   }
   return (
-    <div className="flex flex-col items-center  justify-center gap-5">
+    <div className="flex flex-col items-center mt-4 justify-center gap-5">
       <SectionHeading>Pricing</SectionHeading>
       <p>{pricing.tabs[curr].info}</p>
       <Tabs tabs={pricing.tabs} curr={curr} handleOnClick={handleOnClick} />
