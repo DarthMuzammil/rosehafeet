@@ -58,7 +58,7 @@ function FacilityCard({ mainImage, heading, content, images }) {
                 >
                   <Image
                     src={image}
-                    alt={`${heading} gallery image ${index + 1}`}
+                    alt={`${heading} gallery image ${image}`}
                     fill
                     className="object-cover"
                   />
@@ -81,13 +81,13 @@ function FacilityCard({ mainImage, heading, content, images }) {
 
 export default function Services({ images, heading, content, mainImage }) {
   return (
-    <div className="grid gap-8 p-4 md:p-6">
+ 
       <FacilityCard
         heading={heading}
         content={content}
         mainImage={mainImage}
         images={images}
       />
-    </div>
+
   );
 }
