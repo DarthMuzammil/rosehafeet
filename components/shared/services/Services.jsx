@@ -85,7 +85,7 @@ function FacilityCard({ mainImage, heading, content, images }) {
             alt={heading}
             fill
             className="object-cover rounded-[14px]"
-            priority
+            unoptimized
           />
         </div>
       </div>

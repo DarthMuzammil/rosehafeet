@@ -52,7 +52,7 @@ function Tabs({ tabs, curr, handleOnClick }) {
 function PricingSection({ heading, plans }) {
   return (
     <>
-      <div className="hidden sm:px-12 md:px-28  sm:flex sm:flex-col sm:gap-4 sm:shadow-[0px_6px_12px_0px_rgba(0,0,0,0.25)]     md:flex md:flex-col md:gap-4 md:shadow-[0px_6px_12px_0px_rgba(0,0,0,0.25)]">
+      <div className="hidden md:w-[1220px] md:pb-12 md:pt-6 rounded-2xl sm:px-12 md:px-28  sm:flex sm:flex-col sm:gap-4 sm:shadow-[0px_6px_12px_0px_rgba(0,0,0,0.25)]     md:flex md:flex-col md:gap-4 md:shadow-[0px_6px_12px_0px_rgba(0,0,0,0.25)]">
         <div className="flex justify-center items-center flex-row w-full">
           <h1>{heading}</h1>
         </div>
@@ -60,7 +60,7 @@ function PricingSection({ heading, plans }) {
           return (
             <div
               key={plan.title + index}
-              className="flex bg-[#F0F0F0] items-center p-0 sm:p-2 md:p-12 justify-between flex-row gap-2"
+              className="flex bg-[#F0F0F0] rounded-2xl items-center p-0 sm:p-2 md:p-4 justify-between flex-row gap-2"
             >
               <div className="h-[50px] w-[50px] sm:h-[50px] sm:w-[50px] md:h-[100px] md:w-[100px]">
                 <Image src={ChildSVG} width={100} height={100} alt=";" />
@@ -84,7 +84,7 @@ function PricingSection({ heading, plans }) {
           );
         })}
       </div>
-      <div className="sm:hidden p-4 flex flex-col gap-2">
+      <div className="sm:hidden shadow-2xl rounded-lg bg-gray-50 p-4 flex flex-col gap-2">
         <div className="flex justify-center items-center flex-row w-full">
           <h1>{heading}</h1>
         </div>
@@ -92,7 +92,7 @@ function PricingSection({ heading, plans }) {
           return (
             <div
               key={plan.title + index}
-              className="flex items-center bg-[#F0F0F0] w-full justify-between flex-row"
+              className="flex items-center rounded-lg bg-[#F0F0F0] w-full justify-between flex-row"
             >
               <div className="h-[45px] w-[45px] ml-4  ">
                 <Image src={ChildSVG} width={100} height={100} alt=";" />
