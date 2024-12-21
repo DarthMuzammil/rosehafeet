@@ -15,7 +15,7 @@ export default function HeroSlider({slides}) {
         setFadeIn(true) // Start fade in
       }, 500) // Half of the transition time
       
-    }, 4000) // Change slide every 4 seconds
+    }, 500) // Change slide every 4 seconds
 
     return () => clearInterval(slideInterval);
   }, [])
