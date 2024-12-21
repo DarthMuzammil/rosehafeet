@@ -12,6 +12,7 @@ export default function OurProjects() {
           <Services
             key={index + project.heading}
             images={project.gallery}
+            href={project.href}
             mainImage={project.mainImage}
             heading={project.heading}
             content={project.description}

@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 function CarouselLeftButton({ prevSlide }) {
   return (
@@ -60,7 +61,7 @@ function Carousel({
     </div>
   );
 }
-function FacilityCard({ mainImage, heading, content, images }) {
+function FacilityCard({ href, mainImage, heading, content, images }) {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [activeIndices, setActiveIndices] = React.useState([0, 1, 2]);
 
@@ -77,6 +78,7 @@ function FacilityCard({ mainImage, heading, content, images }) {
   };
 
   return (
+    <Link href={href}>
     <Card className="w-full max-w-xl shadow-lg overflow-hidden">
       <div className="p-5  rounded-lg">
         <div className="relative aspect-video w-full shadow-lg rounded-lg">
@@ -99,15 +101,16 @@ function FacilityCard({ mainImage, heading, content, images }) {
           prevSlide={prevSlide}
         />
       </CardContent>
-    </Card>
+    </Card></Link>
   );
 }
 
-export default function Services({ images, heading, content, mainImage }) {
+export default function Services({ href, images, heading, content, mainImage }) {
   return (
     <FacilityCard
       heading={heading}
       content={content}
+      href={href}
       mainImage={mainImage}
       images={images}
     />
