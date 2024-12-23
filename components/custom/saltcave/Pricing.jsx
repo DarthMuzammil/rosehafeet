@@ -5,6 +5,7 @@ import SectionHeading from "../SectionHeading";
 import Button from "../../shared/Button";
 import ChildSVG from "@/public/saltcave/pricing/child.svg";
 import Image from "next/image";
+import MakeBookingModalSingle from "@/components/shared/MakeBookingModalSingle";
 
 function getSessions(input) {
   if (input.includes("Individual Sessions")) {
@@ -57,6 +58,11 @@ function PricingSection({ heading, plans }) {
           <h1>{heading}</h1>
         </div>
         {plans.map((plan, index) => {
+          const [isModalOpen, setIsModalOpen] = useState(false);
+
+          const openModal = () => setIsModalOpen(true);
+          const closeModal = () => setIsModalOpen(false);
+
           return (
             <div
               key={plan.title + index}
@@ -77,8 +83,15 @@ function PricingSection({ heading, plans }) {
 
               <Button
                 isSelected={true}
-                size={" h-[50px] w-[190px] "}
+                onClick={openModal}
+                size={"h-[50px] w-[190px]"}
                 label={"Book Now"}
+              />
+              <MakeBookingModalSingle
+                isOpen={isModalOpen}
+                closeModal={closeModal}
+                activityName={plan.title}
+                price={plan.price}
               />
             </div>
           );
