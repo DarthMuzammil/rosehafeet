@@ -15,7 +15,7 @@ function getSessions(input) {
   } else if (input.includes("6 Sessions Package")) {
     return "4 Sessions";
   } else {
-    throw new Error("Invalid input");
+    return "4 Sessions";
   }
 }
 

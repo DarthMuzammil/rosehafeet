@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import SectionHeading from "../SectionHeading";
-import { aboutUs } from "@/lib/homepage/homepage";
+
 
 function CompanyBanner() {
   return (
@@ -58,7 +58,7 @@ function CompanyBanner() {
     </>
   );
 }
-export default function AboutSection() {
+export default function AboutSection({aboutUs}) {
   return (
     <>
       <section id="about" className="hidden  xl:flex xl:flex-col">

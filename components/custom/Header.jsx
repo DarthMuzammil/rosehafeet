@@ -4,10 +4,11 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useMenuContext } from "@/contexts/MenuContext";
-import { navigationTabs } from "@/lib/homepage/homepage";
 import Link from "next/link";
 import LocalisedButton from "../shared/LocalisedButton";
 import { MobileMenu } from "../shared/MobileMenu";
+import { useLanguageContext } from "@/contexts/LanguageContext";
+import { getLocalizedContent } from "@/lib/poolarea";
 
 function MobileMenuIcon({ setMenu, isMenuOpen }) {
   return (
@@ -17,7 +18,7 @@ function MobileMenuIcon({ setMenu, isMenuOpen }) {
   );
 }
 
-function DesktopNav({ pathname }) {
+function DesktopNav({ pathname, navigationTabs }) {
   return (
     <nav className="hidden xl:flex space-x-8">
       {navigationTabs.map((item, index) => (
@@ -54,7 +55,8 @@ function LogoSection() {
 
 export default function Header() {
   const { isMenuOpen, setMenu } = useMenuContext(true);
-
+  const { lang } = useLanguageContext();
+  const { navigationTabs } = getLocalizedContent(lang, "homepage");
   const pathname = usePathname();
 
   return (
@@ -63,7 +65,7 @@ export default function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
             <LogoSection />
-            <DesktopNav pathname={pathname} />
+            <DesktopNav pathname={pathname} navigationTabs={navigationTabs} />
             <div className="hidden xl:block">
               <LocalisedButton
                 labelArabic={"English"}
