@@ -79,7 +79,7 @@ function FacilityCard({ href, mainImage, heading, content, images }) {
 
   return (
 
-    <Card className="w-full max-w-xl shadow-lg overflow-hidden">
+    <Card className="w-full max-w-xl mb-4 shadow-lg overflow-hidden">
           <Link href={href}>
       <div className="p-5  rounded-lg">
         <div className="relative aspect-video w-full shadow-lg rounded-lg">
