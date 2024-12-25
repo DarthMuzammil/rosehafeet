@@ -40,7 +40,7 @@ export default function HeroSlider({slides}) {
                 fadeIn ? "opacity-100" : "opacity-0"
               }`}>
               <h1
-                className={`mb-6 text-4xl font-bold leading-tight tracking-tighter ${slides[currentSlide]?.color ?  `text-white` : `text-black` } sm:text-5xl md:text-6xl`}>
+                className={`mb-6 text-4xl font-bold leading-tight tracking-tighter ${slides[currentSlide]?.color === "white" ?  `text-white` : `text-black` } sm:text-5xl md:text-6xl`}>
                 {slides[currentSlide].title}
               </h1>
               <p className={`text-lg ${slides[currentSlide]?.color === "white" ? `text-white` : `text-black`} md:text-xl`}>
