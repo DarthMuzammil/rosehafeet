@@ -1,9 +1,8 @@
 "use client";
 import SectionHeading from "../SectionHeading";
 import Services from "@/components/shared/services/Services";
-import { facilities } from "@/lib/homepage/homepage";
 
-export default function OurProjects() {
+export default function OurProjects({facilities}) {
   return (
     <section className="flex flex-col items-center py-12 md:px-0  xl:px-10 gap-12">
       <SectionHeading className="p-4">Our Attractions</SectionHeading>

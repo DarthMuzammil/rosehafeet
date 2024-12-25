@@ -1,6 +1,5 @@
 "use client";
 import SectionHeading from "../SectionHeading";
-import { benefits } from "@/lib/saltcave/saltcave";
 
 function Benefit({ benefit }) {
   return (
@@ -23,7 +22,7 @@ function Benefit({ benefit }) {
     </div>
   );
 }
-export default function Benefits() {
+export default function Benefits({benefits}) {
   return (
     <>
     <div

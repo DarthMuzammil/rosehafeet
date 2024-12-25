@@ -10,7 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import SectionHeading from "../SectionHeading";
-import { products } from "@/lib/saltcave/saltcave";
 
 function ProductItem({ product }) {
   return (
@@ -55,7 +54,7 @@ function ProductItem({ product }) {
     </Card>
   );
 }
-export default function ProductShowcase() {
+export default function ProductShowcase({products}) {
   return (
     <section className="w-full mt-12 bg-[#F5F5F5] py-16 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
