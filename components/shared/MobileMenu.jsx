@@ -15,9 +15,6 @@ export function MobileMenu({ isOpen, onClose }) {
     { title: "Sulphur Pool", href: "poolarea" },
     { title: "Fun Activities", href: "gamearea" },
     { title: "Wellness & Spa", href: "wellness" },
-    { title: "About", href: "about" },
-    { title: "Contact", href: "contact" },
-    { title: "Careers", href: "careers" },
   ]
 
   if (!isOpen) return null
