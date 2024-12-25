@@ -27,7 +27,7 @@ export default function PricingPage({ pricings }) {
                 : "bg-gray-100 text-gray-600"
             }`}
           >
-            للرجال
+            men
           </Button>
           <Button
             onClick={() => setSelectedGender("women")}
@@ -37,7 +37,7 @@ export default function PricingPage({ pricings }) {
                 : "bg-gray-100 text-gray-600"
             }`}
           >
-            للنساء
+            women
           </Button>
         </div>
 

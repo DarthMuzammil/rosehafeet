@@ -35,33 +35,33 @@ export default function Pricing() {
 
   return (
     (<div className="container mx-auto px-4 py-12 max-w-3xl">
-      <h1 className="text-3xl font-semibold text-center text-[#2A3676] mb-2">Pricing</h1>
+      <h1 className="text-3xl font-semibold text-center text-[#2A3676] mb-2">أسعارنا</h1>
       <p className="text-center text-gray-600 mb-8">
-        Choose the perfect package for your wellness journey
+        اختر الباقة المثالية للرحلتك العافية
       </p>
       <Tabs defaultValue="individual" className="w-full">
         <TabsList className="grid w-full grid-cols-3 mb-8">
           <TabsTrigger
             value="individual"
             className="data-[state=active]:bg-[#2A3676] data-[state=active]:text-white">
-            Individual Sessions
+            جلسات فردية
           </TabsTrigger>
           <TabsTrigger
             value="three"
             className="data-[state=active]:bg-[#2A3676] data-[state=active]:text-white">
-            3 Sessions Package
+            باقة 3 جلسات
           </TabsTrigger>
           <TabsTrigger
             value="six"
             className="data-[state=active]:bg-[#2A3676] data-[state=active]:text-white">
-            6 Sessions Package
+            باقة 6 جلسات
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="individual">
           <Card>
             <CardContent className="p-6">
-              <h2 className="text-xl font-semibold text-center mb-6">Individual Sessions</h2>
+              <h2 className="text-xl font-semibold text-center mb-6">جلسات فردية</h2>
               <div className="space-y-4">
                 {individualSessions.map((session, index) => (
                   <div
@@ -75,13 +75,13 @@ export default function Pricing() {
                       <div>
                         <h3 className="font-medium">{session.title}</h3>
                         <p className="text-[#00A445] font-semibold">
-                          {session.price} <span className="text-sm">AED</span>
+                          {session.price} <span className="text-sm">درهم</span>
                         </p>
                       </div>
                     </div>
                     <Button
                       className="bg-gradient-to-r from-[#2A3676] to-[#00A445] hover:opacity-90 transition-opacity">
-                      Book Now
+                      احجز الآن
                     </Button>
                   </div>
                 ))}
@@ -94,7 +94,7 @@ export default function Pricing() {
           <Card>
             <CardContent className="p-6">
               <div className="text-center text-gray-500">
-                3 Sessions package details will be displayed here
+                باقة 3 جلسات التفاصيل ستُظهر هنا 
               </div>
             </CardContent>
           </Card>
@@ -104,14 +104,14 @@ export default function Pricing() {
           <Card>
             <CardContent className="p-6">
               <div className="text-center text-gray-500">
-                6 Sessions package details will be displayed here
+                باقة 6 جلسات التفاصيل ستُظهر هنا 
               </div>
             </CardContent>
           </Card>
         </TabsContent>
       </Tabs>
       <p className="text-center text-sm text-gray-500 mt-8">
-        Custom packages and group bookings are available upon request.
+      الباقات المخصصة والحجوزات الجماعية متوفرة عند الطلب
       </p>
     </div>)
   );

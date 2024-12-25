@@ -49,14 +49,23 @@ function ServiceCard({ service, reverse = false }) {
             </>
           )}
           <ul className="space-y-0 flex flex-col justify-evenly h-[200px]">
-            {service.benefits.map((benefit, index) => (
-              <li key={index} className="flex items-center gap-3">
-                <Check className="w-5 h-5 shrink-0 text-teal-400" />
-                <span className="text-black text-sm md:text-base h-[21px]">
-                  {benefit}
-                </span>
-              </li>
-            ))}
+            {service.benefits.map((benefit, index) =>
+              lang === "en" ? (
+                <li key={index} className="flex items-center gap-3">
+                  <Check className="w-5 h-5 shrink-0 text-teal-400" />
+                  <span className="text-black text-sm md:text-base h-[21px]">
+                    {benefit}
+                  </span>
+                </li>
+              ) : (
+                <li key={index} className="flex ml-auto items-center gap-3">
+                  <span className="text-black md:text-lg h-[36px]">
+                    {benefit}
+                  </span>
+                  <Check className="w-5 h-5 shrink-0 text-teal-400" />
+                </li>
+              )
+            )}
           </ul>
 
           <div className="flex justify-center items-center flex-row w-full md:hidden">

@@ -78,8 +78,9 @@ function FacilityCard({ href, mainImage, heading, content, images }) {
   };
 
   return (
-    <Link href={href}>
+
     <Card className="w-full max-w-xl shadow-lg overflow-hidden">
+          <Link href={href}>
       <div className="p-5  rounded-lg">
         <div className="relative aspect-video w-full shadow-lg rounded-lg">
           <Image
@@ -90,10 +91,12 @@ function FacilityCard({ href, mainImage, heading, content, images }) {
             unoptimized
           />
         </div>
-      </div>
+      </div></Link>
       <CardContent className="p-6">
+      <Link href={href}>
         <h2 className="text-2xl font-bold mb-2">{heading}</h2>
         <p className="text-neutral-500 mb-6 dark:text-neutral-400">{content}</p>
+        </Link>
         <Carousel
           activeIndices={activeIndices}
           images={images}
@@ -101,7 +104,7 @@ function FacilityCard({ href, mainImage, heading, content, images }) {
           prevSlide={prevSlide}
         />
       </CardContent>
-    </Card></Link>
+    </Card>
   );
 }
 
