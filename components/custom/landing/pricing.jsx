@@ -13,17 +13,17 @@ export default function Pricing() {
     },
     {
       icon: <User className="w-6 h-6" />,
-      title: "A Person Session",
+      title: "A Adult Session",
       price: 150,
     },
     {
       icon: <Users className="w-6 h-6 scale-75" />,
-      title: "Person + Child Session",
+      title: "Adult + Child Session",
       price: 250,
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Person + 2 Children",
+      title: "Adult + 2 Children",
       price: 350,
     },
     {

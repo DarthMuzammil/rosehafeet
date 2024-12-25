@@ -6,7 +6,7 @@ import { aboutUs } from "@/lib/homepage/homepage";
 export default function OurMission({ ourmission }) {
   return (
     <>
-      <section id="about" className="hidden  xl:flex xl:flex-col">
+      <section id="about" className="hidden bg-gray-100  xl:flex xl:flex-col">
         <div className="py-16 md:py-24 justify-center gap-3 flex flex-row">
           <div className="flex flex-col">
             <div
@@ -76,7 +76,7 @@ export default function OurMission({ ourmission }) {
           </div>
         </div>
       </section>
-      <section id="about" className="flex flex-col xl:hidden">
+      <section id="about" className="flex bg-gray-50 flex-col xl:hidden">
         <div className="py-16 md:py-24 justify-center gap-4 flex flex-col">
           <div className="flex flex-col w-full gap-3 p-12">
             <SectionHeading>Our Mission</SectionHeading>

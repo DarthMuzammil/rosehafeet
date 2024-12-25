@@ -6,8 +6,9 @@ import { about } from "@/lib/about/about";
 export default function About() {
   return (
     <>
-    <AboutSection />
+
     <OurMission ourmission={about.ourmission} />
+    <AboutSection />
     </>
   );
 }
